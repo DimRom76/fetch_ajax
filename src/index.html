@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fetc ajax</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <div class="radioGrupp">
+          <input type="radio" id="choice1" name="orientation" value="all" />
+          <label for="choice1">All</label>
+
+          <input
+            type="radio"
+            id="choice2"
+            name="orientation"
+            value="horizontal"
+          />
+          <label for="choice2">Horizontal</label>
+
+          <input
+            type="radio"
+            id="choice3"
+            name="orientation"
+            value="vertical"
+          />
+          <label for="choice3">Vertical</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <ul class="gallery"></ul>
+  </body>
+</html>
