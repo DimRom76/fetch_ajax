@@ -7,9 +7,10 @@ const NumberOfPhotos = 12;
 // axios.defaults.headers.common['Authorization'] = KEY_API;
 
 function fetchPhoto(queryString, numberPage, orientation) {
-  const str = encodeURIComponent(queryString);
-  let url = `https://pixabay.com/api?key=${KEY_API}&q=${str}&image_type=photo&page=${numberPage}&per_page=${NumberOfPhotos}&orientation=${orientation}`;
+  // const str = encodeURIComponent(queryString);
+  let url = `https://pixabay.com/api/?key=${KEY_API}&q=${queryString}&image_type=photo&page=${numberPage}&per_page=${NumberOfPhotos}&orientation=${orientation}`;
 
+  console.log(url);
   return fetch(url)
     .then(res => res.json())
     .then(data => data.hits)

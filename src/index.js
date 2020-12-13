@@ -13,9 +13,8 @@ console.log(refs.galleryList);
 refs.searchForm.addEventListener('submit', onSubmitForm);
 refs.galleryList.addEventListener('click', modalImage);
 
-function getPhoto(queryString, pageNumber) {
-  console.log('qqq');
-  fetchPhoto(queryString, pageNumber, getStatusRadioButton())
+function getPhoto(queryString, pageNumber, orientation) {
+  fetchPhoto(queryString, pageNumber, orientation)
     .then(hits => {
       //console.log(hits);
       updateGalleryMarkup(hits);
@@ -31,9 +30,9 @@ function onSubmitForm(event) {
   }
 
   refs.galleryList.innerHTML = '';
-  getPhoto(queryString, pageNumber);
-
   const orientation = getStatusRadioButton();
+  getPhoto(queryString, pageNumber, orientation);
+
   localStorage.setItem(
     'lastQuery',
     JSON.stringify({ queryString, orientation }),
@@ -62,5 +61,5 @@ if (lastQuery) {
   const { queryString, orientation } = JSON.parse(lastQuery);
   setStatusRadioButton(orientation);
   refs.searchForm.elements[0].value = queryString;
-  getPhoto(queryString, pageNumber);
+  getPhoto(queryString, pageNumber, orientation);
 }
