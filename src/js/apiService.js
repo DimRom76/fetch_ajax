@@ -10,6 +10,11 @@ async function fetchPhoto(queryString, numberPage, orientation) {
 
   const response = await axios.get(url);
   return response.data.hits;
+
+  // const resp = await fetch(url);
+  // const data = await resp.json(); // resp.json() - возвращает промис поэтому нужен авайт
+  // return data.hits;
+
   // return fetch(url)
   //   .then(res => res.json())
   //   .then(data => data.hits)
